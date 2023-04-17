@@ -1,0 +1,2 @@
+1. Proszę odpowiedzieć na pytanie za pomocą jakiego mechanizmu aplikacja wydrukowała w konsoli komunikat ‘new connection’?
+Za pomocą instrukcji server.on, z argumentem connection. Oznacza to, że funkcja console.log wyświetli dane po połączeniu do tego serwera
