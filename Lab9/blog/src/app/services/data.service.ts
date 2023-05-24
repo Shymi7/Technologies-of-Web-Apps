@@ -11,6 +11,10 @@ export class DataService {
   constructor(private http:HttpClient) {
 
   }
+  getById(id: string) {
+    return this.http.get(this.url + '/api/posts/' + id);
+  }
+
 
   getAll(){
     return this.http.get(this.url + '/api/posts');

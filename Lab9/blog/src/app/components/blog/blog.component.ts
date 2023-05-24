@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from "../../services/data.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-blog',
@@ -8,19 +9,15 @@ import {DataService} from "../../services/data.service";
 })
 export class BlogComponent implements OnInit {
 
+  @Input() filterText: string = '';
   public items$: any;
-
-  constructor(private service: DataService) {
-
-  }
-
+  constructor(private service: DataService) {}
   ngOnInit() {
     this.getAll();
   }
-
   getAll() {
-    this.service.getAll().subscribe(response => {
+    this.service.getAll().subscribe((response) => {
       this.items$ = response;
-    })
+    });
   }
 }
